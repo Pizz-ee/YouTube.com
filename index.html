@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YouTube.com</title>
+    <link rel="icon" href="icons/youtube.png">
+
+    <link rel="stylesheet" href="styles/youtube-body.css">
+    <link rel="stylesheet" href="styles/youtube-header.css">
+    <link rel="stylesheet" href="styles/youtube-general-elements.css">
+    <link rel="stylesheet" href="styles/youtube-sidebar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script scr="youtube.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="body">
+    <header>
+        <div class="header">
+
+            <div class="left-section" id="leftsection">
+                <img class="hamburger-menu" src="icons/hamburger-menu.svg" alt="hamburger-menu.svg"
+                    onclick="clickmouseham();">
+
+                <div class="youtube-logo-Container">
+                    <a href=""><img class="youtube-logo" src="icons/youtube-logo.svg" alt="youtube-logo.svg"></a>
+                    <div class="country-tag">USA</div>
+                </div>
+            </div>
+
+            <div class="middle-section">
+                <input class="search_bar" type="text" placeholder="Search">
+                <button class="search-button">
+                    <img class="search-icon" src="icons/search.svg" alt="search.svg">
+                    <div class="tooltip">Search</div>
+                </button>
+                <button class="voice-search-button">
+                    <img class="voice-search-icon" src="icons/voice-search-icon.svg" alt="voice-search-icon.svg">
+                    <div class="tooltip">Search With Voice</div>
+                </button>
+            </div>
+
+            <div class="right-section">
+
+                <div class="upload-icon-container" onclick="clickMouseCommon('upload-video-input')">
+                    <img class="upload-icon" src="icons/upload.svg" alt="upload.svg">
+                    <div class="tooltip">Upload Video</div>
+                    <div class="upload-video-input" id="upload-video-input">
+                        <div class="upload-input-body">
+                            <div class="upload-video-input-body-header">
+                                <div class="text-1-header">Upload Videos</div>
+                                <div class="text-2-header">X</div>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="upload-video-input-body">
+                                <label for="Uploadfile">
+                                    <img src="icons/upload-file.svg" alt="upload file">
+                                </label>
+                                <div class="upload-text-1">Click the 'Select File' to upload videos</div>
+                                <div class="upload-text-2">Your videos will be private until you publish them.</div>
+                                <label class="text-upload" for="Uploadfile">Select File</label>
+                                <div class="input-file-area">
+                                    <div><input class="file-upload-area" type="file" id="Uploadfile"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="youtube-apps-container" onclick="clickMouseCommon('youtube-apps-list-tile')">
+                    <img class="youtube-apps-icon" src="icons/youtube-apps.svg" alt="youtube-apps.svg">
+                    <div class="tooltip">Youtube Apps</div>
+                    <div class="youtube-apps-list-tile" id="youtube-apps-list-tile">
+                        <li>
+                            <a href="https://www.youtube.com/premium" target="_blank">
+                                <div class="youtube-app-bar-tile">
+                                    <img src="icons/originals.svg" alt="Youtube Pre">
+                                    <div>Youtube Premium</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://studio.youtube.com/" target="_blank">
+                                <div class="youtube-app-bar-tile">
+                                    <img src="icons/youtube-studio.svg" alt="studio">
+                                    <div>Youtube Studio</div>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="https://music.youtube.com/" target="_blank">
+                                <div class="youtube-app-bar-tile">
+                                    <img src="icons/youtube-music.svg" alt="music">
+                                    <div>Youtube Music</div>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="https://www.youtubekids.com/?source=youtube_web" target="_blank">
+                                <div class="youtube-app-bar-tile">
+                                    <img src="icons/youtube-kids-icon.svg" alt="kids">
+                                    <div>Youtube Kids</div>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="notifications-icon-container" onclick="clickMouseCommon('notifications-panel')">
+                    <img class="notifications-icon" src="icons/notifications.svg" alt="notifications.svg">
+                    <div class="notifications-icon-count">
+                        00
+                    </div>
+                    <div class="tooltip">Notifications</div>
+
+                    <div class="notifications-panel" id="notifications-panel">
+                        <div class="notifications-panel-list">
+                            <div class="header-notification-panel">
+                                <div>
+                                    <p class="header-notification-text">Notifications</p>
+                                </div>
+                                <div><img class="notification-setting-icon" src="icons/settings-icon.svg"
+                                        alt="settings-icon"></div>
+                            </div>
+                            <hr style="width: 400px;">
+                            <div class="notification-panel-body">
+                                <img src="icons/notifications.svg" alt="notification-icon">
+                                <p><b>Your notifications live here</b></p>
+                                <p>Subscribe to your favourite channels to </p>
+                                <p>receive notifications about their latest </p>
+                                <p>videos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="profile" onclick="clickMouseCommon('profile-menu-outter')">
+                    <img class="my-channel-icon" src="images/u_person.png" alt="profile-image.png">
+                    <div class="outter-profile-tile">
+                        <div class="profile-detalis">
+                            <img class="my-channel-icon-inner" src="images/u_person.png" alt="profile-image">
+                            <div class="info-profile-hover">
+                                <p class="name">pizzee</p>
+                                <p>Developer @ nothing</p>
+                                <p>Web Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-menu-outter" id="profile-menu-outter">
+                        <div class="profile-menu">
+                            <div class="profile-tile-1">
+                                <img class="my-channel-icon-inner" src="images/u_person.png" alt="profile-image">
+                                <div class="info-profile-tile-1">
+                                    <p class="name">pizzee</p>
+                                    <p>Developer @ nothing</p>
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/google.svg" alt="google">
+                                <div>Goolge Account</div>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/switch-account.svg" alt="switch-account">
+                                <div>Switch Account</div>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/logout.svg" alt="logout">
+                                <div>Sign out</div>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/youtube-studio.svg" alt="YT studio">
+                                <div>YouTube Studio</div>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/purchase.svg" alt="purchase.svg">
+                                <div>Purchases And memberships</div>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/settings-icon.svg" alt="settings">
+                                <div>Settings</div>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/help.svg" alt="help">
+                                <div>Help</div>
+                            </div>
+                            <div class="profile-tiles">
+                                <img src="icons/feedback.svg" alt="feedback">
+                                <div>Send feedback</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-link">
+                <img src="icons/home.svg" alt="home">
+                <div>Home</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/youtube-shorts.svg" alt="shorts">
+                <div>Shorts</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/explore.svg" alt="explore">
+                <div>Explore</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/subscriptions.svg" alt="subscriptions">
+                <div>Subscriptions</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/originals.svg" alt="originals">
+                <div>Originals</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/youtube-music.svg" alt="youtube-music">
+                <div>Music</div>
+            </div>
+            <div class="sidebar-link">
+                <img src="icons/library.svg" alt="library">
+                <div>Library</div>
+            </div>
+            <hr style="margin-top: 12px;">
+        </div>
+
+    </nav>
+
+
+    <main>
+        <section class="whole-body">
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=QhmPJ70ojOk" target="_blank"><img class="thumbnail"
+                            src="images/thumb6.jpg" alt=""></a>
+                    <div class="video-time">
+                        11:16:16
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@ScenicRelaxation8K
+                        " target="_blank"><img class="channel_image" src="channels/channels_profile6.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile6.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">8k Scenic Relaxation</p>
+                                <p class="channel-stats">122K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">HUNTER ANIMALS - 8K (60FPS) ULTRA HD - With Nature Sounds (Colorfully
+                            Dynamic)</p>
+                        <p class="video_author">8k Scenic Relaxation</p>
+                        <p class="video_stats">4M Views &#183; 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=LneO7jvrQhw" target="_blank"><img class="thumbnail"
+                            src="images/thumb7.jpg" alt=""></a>
+                    <div class="video-time">
+                        9:36
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@CinecomCrew" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile7.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile7.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Cinecom.net</p>
+                                <p class="channel-stats">2.7M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">10 Unreal Engine 5 PLUGINS I can't live without!</p>
+                        <p class="video_author">Cinecom.net</p>
+                        <p class="video_stats">460K Views &#183; 8 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=ajIcjx0PeYU" target="_blank"><img class="thumbnail"
+                            src="images/thumb8.jpg" alt=""></a>
+                    <div class="video-time">
+                        15:28
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@FlashBytesYT" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile8.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile8.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Flash Bytes</p>
+                                <p class="channel-stats">3.53K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Every Programming Language Ever Explained in 15 Minutes</p>
+                        <p class="video_author">Flash Bytes</p>
+                        <p class="video_stats">266K Views &#183; 5 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=Dw3BZ6O_8LY" target="_blank"><img class="thumbnail"
+                            src="images/thumb9.jpg" alt=""></a>
+                    <div class="video-time">
+                        20:40
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@yoshtm" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile9.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile9.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Yosh</p>
+                                <p class="channel-stats">150k Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Training an unbeatable AI in Trackmania</p>
+                        <p class="video_author">Yosh</p>
+                        <p class="video_stats">267K Views &#183; 5 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=c0YINYT4Ozw" target="_blank"><img class="thumbnail"
+                            src="images/thumb10.jpg" alt=""></a>
+                    <div class="video-time">
+                        26:38
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@Skymography" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile10.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile10.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Skymography</p>
+                                <p class="channel-stats">29K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">How To Sound Design ANYTHING.</p>
+                        <p class="video_author">Skymography</p>
+                        <p class="video_stats">22K Views &#183; 5 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=ErMSHiQRnc8" target="_blank"><img class="thumbnail"
+                            src="images/thumb11.jpg" alt=""></a>
+                    <div class="video-time">
+                        16:08
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@alanbecker" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile11.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile11.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Alan Becker</p>
+                                <p class="channel-stats">27.7M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Animation vs. Physics</p>
+                        <p class="video_author">Alan Becker</p>
+                        <p class="video_stats">23M Views &#183; 6 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=n7cOlBxtKSo" target="_blank"><img class="thumbnail"
+                            src="images/thumb12.jpg" alt=""></a>
+                    <div class="video-time">
+                        16:01
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@ScienceClicEN
+                        " target="_blank"><img class="channel_image" src="channels/channels_profile12.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile12.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">ScienceClic English</p>
+                                <p class="channel-stats">677K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">String Theory</p>
+                        <p class="video_author">ScienceClic English</p>
+                        <p class="video_stats">3.8M Views &#183; 2 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=E90V7L2kvOg" target="_blank"><img class="thumbnail"
+                            src="images/thumb13.jpg" alt=""></a>
+                    <div class="video-time">
+                        6:25
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@NerdRobot" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile13.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile13.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Nerd Robot</p>
+                                <p class="channel-stats">383K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Judaism vs Christianity vs Islam</p>
+                        <p class="video_author">Nerd Robot</p>
+                        <p class="video_stats">3.3M Views &#183; 1 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=Gv4Af83KFrE" target="_blank"><img class="thumbnail"
+                            src="images/thumb14.jpg" alt=""></a>
+                    <div class="video-time">
+                        32:23
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@HISTORY" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile14.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile14.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">HISTORY</p>
+                                <p class="channel-stats">13.6M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Forged in Fire: TOP 5 DEADLIEST WEAPONS FROM INDIA | History</p>
+                        <p class="video_author">HISTORY</p>
+                        <p class="video_stats">29M Views &#183; 3 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=QGAh6IwahqE" target="_blank"><img class="thumbnail"
+                            src="images/thumb15.jpg" alt=""></a>
+                    <div class="video-time">
+                        2:15
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@ageofempires" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile15.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channels_profile15.jpg" alt="">
+                            <div class="channel-details">
+                                <p class="channel-owner">Age of Empires</p>
+                                <p class="channel-stats">100K Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Age of Empires II: HD Edition Trailer</p>
+                        <p class="video_author">Marquees</p>
+                        <p class="video_stats">228K Views &#183; 11 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=2DvrRadXwWY" target="_blank"><img class="thumbnail"
+                            src="images/thumb16.jpg" alt=""></a>
+                    <div class="video-time">
+                        3:32
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@Fireship" target="_blank"><img class="channel_image"
+                                src="channels/channels_profile16.jpg" alt=""></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-3.png" alt="channel-3.png">
+                            <div class="channel-details">
+                                <p class="channel-owner">Fireship</p>
+                                <p class="channel-stats">3.1M Subscribers</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Ruby on Rails in 100 Seconds</p>
+                        <p class="video_author">Fireship</p>
+                        <p class="video_stats">353K Views &#183; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row"><a href="https://www.youtube.com/watch?v=094y1Z2wpJg" target="_blank"><img
+                            class="thumbnail" src="images/thumbnail-4.webp" alt="thumbnail-4.webp"></a>
+                    <div class="video-time">
+                        22:08
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@veritasium" target="_blank"><img class="channel_image"
+                                src="channels/channel-4.jpeg" alt="channel-4.jpeg"></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-4.jpeg" alt="channel-4.jpeg">
+                            <div class="channel-details">
+                                <p class="channel-owner">Veritasium</p>
+                                <p class="channel-stats">1.2M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">The Simplest Math Problem No One Can Solve - Collatz Conjecture</p>
+                        <p class="video_author">Veritasium</p>
+                        <p class="video_stats">40M Views &#183; 2 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=n2RNcPRtAiY" target="_blank"><img class="thumbnail"
+                            src="images/thumbnail-1.webp" alt="thumbnail-1.webp"></a>
+                    <div class="video-time">
+                        14:20
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@mkbhd" target="_blank"><img class="channel_image"
+                                src="channels/channel-1.jpeg" alt="channel-1.jpeg"></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-1.jpeg" alt="channel-1.jpeg">
+                            <div class="channel-details">
+                                <p class="channel-owner">Marquees Brownlee</p>
+                                <p class="channel-stats">19M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Talking Tech And AI with Google CEO Sunadar Pichai!</p>
+                        <p class="video_author">Marquees Brownlee</p>
+                        <p class="video_stats">4.2M Views &#183; 3 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=86CQq3pKSUw" target="_blank"><img class="thumbnail"
+                            src="images/thumbnail-5.webp" alt="thumbnail-5.webp"></a>
+                    <div class="video-time">
+                        11:16
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@CSDojo" target="_blank"><img class="channel_image"
+                                src="channels/channel-5.jpeg" alt="channel-5.jpeg"></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-5.jpeg" alt="channel-5.jpeg">
+                            <div class="channel-details">
+                                <p class="channel-owner">CS Dojo</p>
+                                <p class="channel-stats">1.93M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Kadane's Algorithm to Maximum Sum Subarray Problem</p>
+                        <p class="video_author">CS Dojo</p>
+                        <p class="video_stats">693K Views &#183; 8 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=yXWw0_UfSFg" target="_blank"><img class="thumbnail"
+                            src="images/thumbnail-6.webp" alt="thumbnail-6.webp"></a>
+                    <div class="video-time">
+                        19:54
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@MrBeast" target="_blank"><img class="channel_image"
+                                src="channels/channel-6.jpeg" alt="channel-6.jpeg"></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-6.jpeg" alt="channel-6.jpeg">
+                            <div class="channel-details">
+                                <p class="channel-owner">Mr Beast</p>
+                                <p class="channel-stats">283M Subscribers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title"> Anything You Can Fit In The Circle I’ll Pay For</p>
+                        <p class="video_author">MrBeast</p>
+                        <p class="video_stats">294M Views &#183; 1 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview">
+                <div class="thumbnail-row">
+                    <a href="https://www.youtube.com/watch?v=mP0RAo9SKZk" target="_blank"><img class="thumbnail"
+                            src="images/thumbnail-2.webp" alt="thumbnail-2.webp"></a>
+                    <div class="video-time">
+                        8:21
+                    </div>
+                </div>
+                <div class="video_channel">
+                    <div class="channel">
+                        <a href="https://www.youtube.com/@markiplier" target="_blank"><img class="channel_image"
+                                src="channels/channel-2.jpeg" alt="channel-2.jpeg"></a>
+                        <div class="channel-info">
+                            <img class="channel_image" src="channels/channel-2.jpeg" alt="channel-2.jpeg">
+                            <div class="channel-details">
+                                <p class="channel-owner">Markiplier</p>
+                                <p class="channel-stats">36.7M Subscribers</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="video_info">
+                        <p class="video_title">Try Not To Laugh Challenge #9</p>
+                        <p class="video_author">Markiplier</p>
+                        <p class="video_stats">21M Views &#183; 6 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="loading">
+            <img src="icons/loading.gif" alt="">
+        </div>
+
+
+        <div class="background-disclaimer" id="background-disclaimer">
+            <div class="disclaimer">
+                <div class="disclaimer-head">
+                    <div class="text-1-header">ABOUT</div>
+                    <div class="dis-2-header" onclick="
+                        document.getElementById('background-disclaimer').style.display ='none';
+                    ">X</div>
+                </div>
+                <div>
+                    <hr>
+                </div>
+                <div class="disclaimer-body">
+
+                    <p class="dis-text">This website is the replica of YouTube.com, but with some features and
+                        functionalities, like
+                    </p>
+                    <p class="dis-text">Some icons on website have some functionalities which is explained below </p>
+                    <p class="dis-text">*Also by clicking these icons, display more details</p>
+                    <div class="dis-icon-outer">
+                        <div class="dis-icon">
+                            <img src="icons/hamburger-menu.svg" alt="">
+                            <div class="dis-text">Hamburger-menu change the size of sidebar</div>
+                        </div>
+                        <div class="dis-icon">
+                            <img src="icons/upload.svg" alt="">
+                            <div class="dis-text">Upload-icon use to upload the video</div>
+                        </div>
+                        <div class="dis-icon">
+                            <img src="icons/youtube-apps.svg" alt="">
+                            <div class="dis-text">Youtube-app icons have some other youtube apps</div>
+                        </div>
+                        <div class="dis-icon">
+                            <img src="icons/notifications.svg" alt="">
+                            <div class="dis-text">Notification-icon shows the notification of videos</div>
+                        </div>
+                        <div class="dis-icon">
+                            <img src="images/u_person.png" alt="">
+                            <div class="dis-text">Profile image shows which account is loged-in currently</div>
+                        </div>
+                    </div>
+                    <p class="dis-text" style="margin-top: 10px;"> <strong>Note:</strong> Thumbnails and Channel icons
+                        will open the video and channel profile respectively of that creator in Youtube.com</p>
+                    <div>
+                        <button class="visit-btn"
+                            onclick="document.getElementById('background-disclaimer').style.display ='none';">Visit
+                            Website</button>
+                    </div>
+
+                    <div class="credits">
+                        <p>Made by: Pizzee</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var a = 0;
+
+        function clickmouseham() {
+            if (a == 0) {
+                document.getElementById('sidebar').style.display = 'none';
+                document.getElementById('body').style.paddingLeft = '20px';
+
+                a = 1;
+            } else {
+                document.getElementById('sidebar').style.display = 'block';
+                if (window.getComputedStyle(document.getElementById('sidebar')).width == '100px') {
+                    document.getElementById('body').style.paddingLeft = '122px';
+                }
+                else {
+                    document.getElementById('body').style.paddingLeft = '231px';
+                }
+                a = 0;
+            }
+
+        }
+
+        var b = 1;
+        function clickMouseCommon(id) {
+            if (b == 0) {
+                document.getElementById(id).style.display = 'none';
+                b = 1;
+            } else {
+                document.getElementById(id).style.display = 'block';
+                b = 0;
+            }
+        }
+    </script>
+
+</body>
+
+
+<footer>
+    <div class="footer">
+        <div class="boxes">
+            <h3>About YouTube</h3>
+            <p>YouTube is an American online video sharing platform owned by Google. Accessible worldwide, YouTube
+                launched on February 14, 2005, by Steve Chen, Chad Hurley, and Jawed Karim, three former employees
+                of
+                PayPal.</p>
+        </div>
+        <div class="boxes">
+            <h3>Contact YouTube</h3>
+            <div class="contact">
+                <div>
+                    <a href="https://x.com/YouTube?mx=2" target="_blank"><img class="contact-images"
+                            src="icons/twitter.svg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/youtube" target="_blank"><img class="contact-images"
+                            src="icons/facebook.svg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/youtube/" target="_blank"><img class="contact-images"
+                            src="icons/instagram.svg" alt="">
+                    </a>
+                </div>
+
+                <div>
+                    <p><strong>Headquater:</strong> San Bruno, California, United States</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="boxes">
+            <h3>Website Made By</h3>
+            <p>Name: <strong>Pizzee</strong></p>
+            <p>Work at: <strong>- - -</strong></p>
+            <p>Working Field: <strong>Web Development</strong></p>
+        </div>
+    </div>
+
+    <div>
+
+        <input id="EName" type="text" placeholder="Enter Name">
+        <label>Your Name: </label>
+        <label id="name">Here...</label>
+        <button onclick="
+        document.getElementById('name').innerHTML = document.getElementById('EName').value;
+        ">SUBMIT</button>
+
+    </div>
+
+
+</footer>
+
+</html>

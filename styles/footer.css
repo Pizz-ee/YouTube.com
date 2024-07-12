@@ -1,0 +1,40 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #131824;
+    z-index: 1000;
+    margin: 100px 0px 10px 0px;
+    border-radius: 10px;
+    cursor: default;
+}
+
+.boxes {
+    border: 1px solid rgb(196, 195, 195);
+    border-radius: 10px;
+    margin: 30px 20px;
+    padding: 5px 10px 10px 10px;
+    color: white;
+}
+
+.boxes p {
+    font-size: 14px;
+}
+
+.boxes p strong {
+    font-size: 16px;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact-images {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-images:hover {
+    opacity: 0.75;
+}
